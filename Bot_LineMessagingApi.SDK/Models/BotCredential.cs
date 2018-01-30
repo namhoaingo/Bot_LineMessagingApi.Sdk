@@ -9,6 +9,5 @@ namespace Bot_LineMessagingApi.SDK.Models
     {
         public string AppId { get; set; }
         public string AppSecret { get; set; }
-        public string AppAccessToken { get; set; }
     }
 }

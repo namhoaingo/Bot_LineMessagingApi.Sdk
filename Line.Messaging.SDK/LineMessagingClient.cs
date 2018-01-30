@@ -20,11 +20,13 @@ namespace Line.Messaging
         private JsonSerializerSettings _jsonSerializerSettings;
         static private string _uri;
 
+
         /// <summary>
         /// Constructor 
         /// </summary>
         /// <param name="channelAccessToken">ChannelAccessToken</param>
         /// <param name="uri">Request URI</param>
+        /// 
         public LineMessagingClient(string channelAccessToken, string uri = "https://api.line.me/v2")
         {
             _client = new HttpClient();

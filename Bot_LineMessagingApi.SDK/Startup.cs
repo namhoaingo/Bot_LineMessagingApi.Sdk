@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bot_LineMessagingApi.SDK.Managers;
 using Bot_LineMessagingApi.SDK.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +34,8 @@ namespace Bot_LineMessagingApi.SDK
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<BotCredential>(options => Configuration.GetSection("LineBot").Bind(options));
-
+            services.AddSingleton<ITokenManager, TokenManager>();
+            services.AddMemoryCache();
             services.AddMvc();
         }
 
