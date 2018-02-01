@@ -157,7 +157,7 @@ namespace Bot_LineMessagingApi.SDK
             }
             else if (userMessage == "imagecarousel")
             {
-                UriTemplateAction action = new UriTemplateAction("Uri Label", "https://github.com/kenakamu");
+                UriTemplateAction action = new UriTemplateAction("Uri Label", "https://github.com/namhoaingo");
 
                 replyMessage = new TemplateMessage("ImageCarouselTemplate",
                     new ImageCarouselTemplate(new List<ImageCarouselColumn> {
@@ -170,7 +170,16 @@ namespace Bot_LineMessagingApi.SDK
             }
             else if (userMessage == "imagemap")
             {
-                throw new NotImplementedException();
+                replyMessage = new ImagemapMessage("https://d412efff.ngrok.io/api/image/DeathStar2",
+                                                "Image has some problem to load",
+                                                new ImagemapSize(1040, 1040),
+                                                new List<IImagemapAction> {
+                                                        new UriImagemapAction(
+                                                            new ImagemapArea(0,0,520,1040), "https://www.diffnow.com/"),
+                                                        new MessageImagemapAction(
+                                                            new ImagemapArea(520,0,520,1040), "https://www.diffnow.com/"),
+                                                            }
+                    );
             }
             else if (userMessage == "addrichmenu")
             {
@@ -200,7 +209,7 @@ namespace Bot_LineMessagingApi.SDK
             }
             else
             {
-                replyMessage = new TextMessage(userMessage);
+                replyMessage = new TextMessage("https://d412efff.ngrok.io/Assets/DeathStar2.jpg");
             }
 
             await messagingClient.ReplyMessageAsync(replyToken, new List<ISendMessage> { replyMessage });
