@@ -8,7 +8,7 @@
         /// <summary>
         /// Contents of the message
         /// </summary>
-        public EventMessage Message { get; }
+        public EventMessage Message { get; set;  } // may remove the set later
 
         public MessageEvent(WebhookEventSource source, long timestamp, EventMessage message, string replyToken)
             : base(WebhookEventType.Message, source, timestamp, replyToken)

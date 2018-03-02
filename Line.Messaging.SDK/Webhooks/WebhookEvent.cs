@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApiAiSdkNetCore.Model;
+using System;
 
 namespace Line.Messaging.Webhooks
 {
@@ -6,7 +7,8 @@ namespace Line.Messaging.Webhooks
     /// The webhook event generated on the LINE Platform.
     /// https://developers.line.me/en/docs/messaging-api/reference/#webhook-event-objects
     /// </summary>
-    public abstract class WebhookEvent
+    /// Implement from the Event to power inheritance
+    public abstract class WebhookEvent: Event
     {
         /// <summary>
         /// Identifier for the type of event
@@ -29,6 +31,7 @@ namespace Line.Messaging.Webhooks
             Source = source;
             Timestamp = timestamp;
         }
+        
 
         internal static WebhookEvent CreateFrom(dynamic dynamicObject)
         {

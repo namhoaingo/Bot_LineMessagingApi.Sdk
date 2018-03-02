@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <Authors>pierre3, kenamanu</Authors>
+    <Authors>Nam Ngo</Authors>
     <Company></Company>
     <Product>Line Messaging API</Product>
     <Description>Line Messaging API for .Net</Description>
     <Version>1.2.1</Version>
-    <Copyright>© 2017 pierre3</Copyright>
+    <Copyright>© 2017 Nam Ngo</Copyright>
     <PackageLicenseUrl>https://github.com/pierre3/LineMessagingApi/blob/master/LICENSE</PackageLicenseUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Line Messaging API;line;bot</PackageTags>
@@ -28,7 +28,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ApiAiSdkNetCore\ApiAiSdkNetCore\ApiAiSdkNetCore.csproj" />
   </ItemGroup>
 
 </Project>

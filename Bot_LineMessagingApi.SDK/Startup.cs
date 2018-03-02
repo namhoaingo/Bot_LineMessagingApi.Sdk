@@ -35,6 +35,7 @@ namespace Bot_LineMessagingApi.SDK
         {
             services.Configure<BotCredential>(options => Configuration.GetSection("LineBot").Bind(options));
             services.AddSingleton<ITokenManager, TokenManager>();
+            services.AddSingleton<IIntentManager, IntentManager>();
             services.AddMemoryCache();
             services.AddMvc();
         }

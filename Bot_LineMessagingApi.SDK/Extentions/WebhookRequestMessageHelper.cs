@@ -1,6 +1,7 @@
 ﻿using Line.Messaging;
 using Line.Messaging.Webhooks;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,17 @@ namespace Bot_LineMessagingApi.SDK.Extentions
 {
     public static class WebhookRequestMessageHelper
     {
+        // This is only for Line
+        public static WebhookEvent GetWebhookEventFromStringAsync(JObject data)
+        {
+            if (data == null) { throw new ArgumentNullException(nameof(data)); }
+
+            WebhookEvent result = WebhookEventParser.ParseLineFromDialogFlow(data.ToString(Newtonsoft.Json.Formatting.None));
+
+            return result;
+        }
+
+
         /// <summary>
         /// Verify if the request is valid, then returns LINE Webhook events from the request
         /// </summary>

@@ -117,7 +117,8 @@ namespace Bot_LineMessagingApi.SDK
                     new ButtonsTemplate(text: "ButtonsTemplate", title: "Click Buttons.",
                     actions: new List<ITemplateAction> {
                         new MessageTemplateAction("Message Label", "sample data"),
-                        new PostbackTemplateAction("Postback Label", "sample data", "sample data"),
+                        //new PostbackTemplateAction("Postback Label", "sample data", "sample data"),
+                        new PostbackTemplateAction("Postback Label", "sample data"),
                     new UriTemplateAction("Uri Label", "https://github.com/kenakamu")
                     }));
             }
@@ -175,7 +176,7 @@ namespace Bot_LineMessagingApi.SDK
                                                 new ImagemapSize(1040, 1040),
                                                 new List<IImagemapAction> {
                                                         new UriImagemapAction(
-                                                            new ImagemapArea(0,0,520,1040), "https://www.diffnow.com/"),
+                                                            new ImagemapArea(0,0,520,1040), "https://24aa4e3a.ngrok.io/account/Signin/" + userId),
                                                         new MessageImagemapAction(
                                                             new ImagemapArea(520,0,520,1040), "https://www.diffnow.com/"),
                                                             }
@@ -209,7 +210,8 @@ namespace Bot_LineMessagingApi.SDK
             }
             else
             {
-                replyMessage = new TextMessage("https://d412efff.ngrok.io/Assets/DeathStar2.jpg");
+                //replyMessage = new TextMessage("https://d412efff.ngrok.io/Assets/DeathStar2.jpg");
+                return;
             }
 
             await messagingClient.ReplyMessageAsync(replyToken, new List<ISendMessage> { replyMessage });
